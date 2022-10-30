@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+    width: 100%;
+  max-width: 35rem;
+  margin: 0 auto;
+  font-family: sans-serif;
+  counter-reset: num;
+  padding:1.4em;
+  background-color: #562ba7;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+.container > h1 {
+  font-weight: 300;
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: rgb(255, 255, 255);
+  text-align:center;
+}
+.accordion {
+  padding: 0.5em 0;
+  background-color: rgb(7, 6, 1);
+  border-radius: 1em;
+  margin: 0.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.accordion h2 {
+  font-size: 1.2em;
+  margin-left: 0.5em;
+  color: #fff;
+}
+.active .icon {
+  background-color: hotpink;
+  color: #fff;
+}
+.active {
+  background-color: rgb(40, 2, 100);
+  color: #fff;
+}
+.accordion.active h2{
+    color: #fff5f5;
+}
+.accordion .icon {
+  height: 1.5em;
+  width: 1.5em;
+  position: relative;
+  background-color: rgb(26, 208, 240);
+  margin: 0 0.5em;
+  border-radius: 50%;
+}
+.accordion .icon::before {
+  content: counter(num);
+  counter-increment: num;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.details {
+  padding-left: 1em;
+  border-left: 2px solid cyan;
+  margin-left: 1em;
+  max-height: 0;
+  overflow: hidden;
+  color: #ddd;
+  line-height: 1.5;
+}
+@media screen and (max-width:35rem) {
+    .container{
+        font-size: 14px;
+    }
+}
